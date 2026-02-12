@@ -6,29 +6,24 @@
   <title>Portfolio Fred</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind.config = {
-      darkMode: 'class'
-    }
+    tailwind.config = { darkMode: 'class' }
   </script>
+  <!-- Font Awesome pour les icônes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    }
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
   </style>
 </head>
 <body class="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100">
 
   <!-- Header -->
   <header class="bg-white shadow dark:bg-gray-800 dark:text-white">
-    <nav class="container mx-auto flex justify-between p-4">
+    <nav class="container mx-auto flex justify-between items-center p-4">
       <h1 class="text-xl font-bold">Fred</h1>
-      <ul class="flex space-x-4">
+
+      <!-- Menu Desktop -->
+      <ul class="hidden md:flex space-x-4">
         <li><a href="#hero" class="hover:text-blue-500">Accueil</a></li>
         <li><a href="#about" class="hover:text-blue-500">À propos</a></li>
         <li><a href="#formation" class="hover:text-blue-500">Formation</a></li>
@@ -37,19 +32,32 @@
         <li><a href="#projects" class="hover:text-blue-500">Projets</a></li>
         <li><a href="#contact" class="hover:text-blue-500">Contact</a></li>
       </ul>
-      <button id="toggleDark" class="ml-4 px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-800">
-        🌙 / ☀️
+
+      <!-- Bouton Dark Mode -->
+      <button id="toggleDark" class="ml-4 px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-800">🌙 / ☀️</button>
+
+      <!-- Bouton Menu Mobile -->
+      <button id="mobile-menu-btn" class="md:hidden p-2">
+        <i class="fas fa-bars text-2xl text-gray-700 dark:text-gray-300"></i>
       </button>
     </nav>
+
+    <!-- Menu Mobile -->
+    <div id="mobile-menu" class="hidden md:hidden pb-4 space-y-2 text-center bg-gray-100 dark:bg-gray-900">
+      <a href="#hero" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-blue-900/20">Accueil</a>
+      <a href="#about" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-blue-900/20">À propos</a>
+      <a href="#formation" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-blue-900/20">Formation</a>
+      <a href="#experience" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-blue-900/20">Expériences</a>
+      <a href="#skills" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-blue-900/20">Compétences</a>
+      <a href="#projects" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-blue-900/20">Projets</a>
+      <a href="#contact" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-blue-900/20">Contact</a>
+    </div>
   </header>
 
   <!-- Hero -->
   <section id="hero" class="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-r from-blue-500 to-indigo-600 text-white">
-    <img src="profil.jpg" alt="Photo de Fred Bello" 
-         class="w-32 h-32 rounded-full border-4 border-white shadow-lg mb-6 
-                ring-4 ring-blue-400 ring-offset-2 ring-offset-indigo-600 
-                transform transition duration-300 hover:scale-110 hover:shadow-2xl">
-
+    <img src="profil.jpeg" alt="Photo de Fred Bello" 
+         class="w-32 h-32 rounded-full border-4 border-white shadow-lg mb-6 ring-4 ring-blue-400 ring-offset-2 ring-offset-indigo-600 transform transition duration-300 hover:scale-110 hover:shadow-2xl">
     <h2 id="hero-title" class="text-4xl font-bold mb-4"></h2>
     <p class="text-lg">Développeur passionné par l’automatisation, le front-end et le back-end</p>
     <a href="#projects" class="mt-6 px-6 py-2 bg-white text-blue-600 font-semibold rounded shadow hover:bg-gray-200">Voir mes projets</a>
@@ -58,7 +66,7 @@
   <!-- À propos -->
   <section id="about" class="container mx-auto py-16 fade-in">
     <h3 class="text-2xl font-bold mb-4">À propos</h3>
-    <p class="text-lg leading-relaxed">Je suis un développeur fullstack basé à Dakar, passionné par la sécurité, l’automatisation et l’expérience utilisateur. J’aime créer des solutions robustes et élégantes.</p>
+    <p class="text-lg leading-relaxed">Je suis un développeur fullstack basé à Dakar, passionné par la sécurité, l’automatisation et l’expérience utilisateur.</p>
   </section>
 
   <!-- Formation -->
@@ -97,7 +105,7 @@
     </ul>
   </section>
 
-  <!-- Projets -->
+   <!-- Projets -->
   <section id="projects" class="container mx-auto py-16 fade-in">
     <h3 class="text-2xl font-bold mb-4">Projets</h3>
     <div class="grid md:grid-cols-2 gap-8">
@@ -118,10 +126,114 @@
   <!-- Contact -->
   <section id="contact" class="container mx-auto py-16 fade-in">
     <h3 class="text-2xl font-bold mb-4">Contact</h3>
-    <p>Email : fred@example.com | LinkedIn | GitHub</p>
+    <p class="text-lg">Email : fred@example.com</p>
+    <p class="text-lg">LinkedIn | GitHub | Twitter</p>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-gray-800 text-white text-center py-6 relative dark:bg-gray-700">
-    <p>&copy; 2026 Fred - Tous droits réservés</p>
-    <div class
+  <!-- Footer enrichi -->
+  <footer class="bg-slate-950 text-gray-300 py-12 px-4 border-t border-blue-900/30">
+    <div class="max-w-4xl mx-auto">
+      <div class="grid md:grid-cols-3 gap-8 mb-8">
+        <div>
+          <h3 class="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">Fred</h3>
+          <p class="text-gray-400">Développeur Web Fullstack passionné - Étudiant à UNIPRO.</p>
+        </div>
+        <div>
+          <h4 class="font-bold text-lg mb-4 text-gray-100">Liens Rapides</h4>
+          <ul class="space-y-2 text-gray-400">
+            <li><a href="#about" class="hover:text-blue-400 transition">À propos</a></li>
+            <li><a href="#projects" class="hover:text-blue-400 transition">Projets</a></li>
+            <li><a href="#contact" class="hover:text-blue-400 transition">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold text-lg mb-4 text-gray-100">Réseaux Sociaux</h4>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-blue-400 transition"><i class="fab fa-linkedin text-2xl"></i></a>
+            <a href="#" class="text-gray-400 hover:text-blue-400 transition"><i class="fab fa-github text-2xl"></i></a>
+            <a href="#" class="text-gray-400 hover:text-blue-400 transition"><i class="fab fa-twitter text-2xl"></i></a>
+            <a href="#" class="text-gray-400 hover:text-blue-400 transition"><i class="fab fa-facebook text-2xl"></i></a>
+            <a href="#" class="text-gray-400 hover:text-blue-400 transition"><i class="fab fa-instagram text-2xl"></i></a>
+            <a href="#" class="text-gray-400 hover:text-blue-400 transition"><i class="fab fa-tiktok text-2xl"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-blue-900/30 pt-8 text-center text-gray-500">
+        <p>&copy; 2026 Portfolio. Tous droits réservés. | Développé avec <span class="text-blue-400">❤</span> par Fred</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bouton retour en haut -->
+  <button id="backToTop" class="hidden fixed bottom-6 right-6 bg-blue-600 text-white px-4 py-2 rounded-full shadow-lg hover:bg-blue-800">↑</button>
+
+  <!-- Scripts -->
+  <script>
+    // Effet typewriter
+    const text = "Salut, je suis Fred BELLO, développeur fullstack";
+    let i = 0;
+    function typeWriter() {
+      if (i < text.length) {
+        document.getElementById("hero-title").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 100);
+      }
+    }
+    window.onload = typeWriter;
+
+    // Bouton retour en haut
+    const btn = document.getElementById("backToTop");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        btn.classList.remove("hidden");
+      } else {
+        btn.classList.add("hidden");
+      }
+    });
+    btn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    // Animation au scroll (fade-in)
+    const sections = document.querySelectorAll(".fade-in");
+    window.addEventListener("scroll", () => {
+      sections.forEach(sec => {
+        const rect = sec.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          sec.classList.add("visible");
+        }
+      });
+    });
+
+    // Dark Mode Toggle
+    const toggleDark = document.getElementById("toggleDark");
+    toggleDark.addEventListener("click", () => {
+      document.documentElement.classList.toggle("dark");
+    });
+
+    // Menu mobile toggle
+    const mobileBtn = document.getElementById("mobile-menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    mobileBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    // Compteur interactif
+    let count = 0;
+    const counter = document.getElementById("counter");
+    const increment = document.getElementById("increment");
+    const reset = document.getElementById("reset");
+
+    increment.addEventListener("click", () => {
+      count++;
+      counter.textContent = count;
+    });
+
+    reset.addEventListener("click", () => {
+      count = 0;
+      counter.textContent = count;
+    });
+  </script>
+
+</body>
+</html>
