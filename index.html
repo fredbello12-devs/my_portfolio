@@ -18,7 +18,7 @@
 <body class="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100">
 
   <!-- Progress bar -->
-  <div id="progressBar" class="fixed top-0 left-0 h-1 bg-blue-600 z-50" style="width:0;"></div>
+  <div id="progressBar" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-blue-500 to-purple-600 z-50" style="width:0;"></div>
 
   <!-- Header -->
   <header class="bg-white shadow dark:bg-gray-800 dark:text-white">
@@ -50,36 +50,24 @@
   </header>
 
   <!-- Hero -->
-  <section id="hero" class="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-r from-blue-500 to-indigo-600 text-white">
+  <section id="hero" class="h-screen flex flex-col justify-center items-center text-center bg-fixed bg-cover bg-center text-white" style="background-image: url('images/hero-bg.jpg');">
     <img src="profil.jpeg" alt="Photo de Fred Bello" class="w-32 h-32 rounded-full border-4 border-white shadow-lg mb-6">
     <h2 id="hero-title" class="text-4xl font-bold mb-4"></h2>
     <p class="text-lg">Développeur passionné par l’automatisation, le front-end et le back-end</p>
     <div class="flex justify-center mt-6">
-      <a href="#projects" class="px-6 py-2 bg-white text-blue-600 font-semibold rounded shadow hover:bg-gray-200">Voir mes projets</a>
-      <a href="#contact" class="ml-4 px-6 py-2 bg-green-600 text-white font-semibold rounded shadow hover:bg-green-800">Recruter</a>
+      <a href="#projects" class="px-6 py-2 bg-white text-blue-600 font-semibold rounded shadow hover:bg-gray-200 hover:scale-105 transition">Voir mes projets</a>
+      <a href="#contact" class="ml-4 px-6 py-2 bg-green-600 text-white font-semibold rounded shadow hover:bg-green-800 hover:scale-105 transition">Recruter</a>
     </div>
   </section>
 
   <!-- À propos -->
-  <section id="about" class="container mx-auto py-16 fade-in">
+  <section id="about" class="container mx-auto py-16 fade-in opacity-0 translate-y-5 transition duration-700">
     <h3 class="text-2xl font-bold mb-4">À propos</h3>
-    <p class="text-lg">
-      Je suis Fred Bello, étudiant en informatique fullstack à UNIPRO, passionné par la création numérique et le développement logiciel. 
-      Mon parcours m’a permis d’explorer plusieurs domaines : de l’animation 2D/3D, où j’ai appris à donner vie aux idées visuelles, 
-      jusqu’à la programmation et la conception d’applications robustes et sécurisées.
-    </p>
-    <p class="mt-4 text-lg">
-      J’aime particulièrement expérimenter avec des outils comme <strong>Game Maker</strong>, qui me permettent de combiner mon intérêt pour le gaming 
-      et mes compétences techniques. Cette passion nourrit ma créativité et m’inspire à développer des projets interactifs, 
-      accessibles et innovants.
-    </p>
-    <p class="mt-4 text-lg">
-      Mon objectif est de continuer à progresser dans le développement web et logiciel, en alliant esthétique, interactivité et performance.
-    </p>
+    <p class="text-lg">Je suis Fred Bello, étudiant en informatique fullstack à UNIPRO, passionné par la création numérique et le développement logiciel...</p>
   </section>
 
   <!-- Formation -->
-  <section id="formation" class="container mx-auto py-16 fade-in">
+  <section id="formation" class="container mx-auto py-16 fade-in opacity-0 translate-y-5 transition duration-700">
     <h3 class="text-2xl font-bold mb-4">Formation</h3>
     <ul class="space-y-4">
       <li class="bg-white dark:bg-gray-800 p-4 rounded shadow">🎓 Baccalauréat obtenu en <strong>2023/2024</strong></li>
@@ -89,141 +77,131 @@
     </ul>
   </section>
 
- <!-- Expériences -->
-<section id="experience" class="container mx-auto py-16 fade-in">
-  <h3 class="text-2xl font-bold mb-4">Expériences professionnelles</h3>
-  <ul class="space-y-4">
-    <li class="bg-white dark:bg-gray-800 p-4 rounded shadow">
-      <h4 class="text-lg font-semibold">Stage à TGI (Entreprise de maintenance et design)</h4>
-      <p>Participation aux projets de maintenance informatique et design, avec une immersion dans la gestion technique et la conception visuelle. Ce stage m’a permis de développer mes compétences pratiques en environnement professionnel.</p>
-    </li>
-    <li class="bg-white dark:bg-gray-800 p-4 rounded shadow">
-      <h4 class="text-lg font-semibold">Bureautique à l’entreprise Notre Continent</h4>
-      <p>Travaux de saisie, gestion documentaire et utilisation des outils bureautiques pour soutenir les activités administratives de l’entreprise. Cette expérience m’a permis de renforcer ma rigueur et mon efficacité dans le traitement de données.</p>
-    </li>
-  </ul>
-</section>
+  <!-- Expériences -->
+  <section id="experience" class="container mx-auto py-16 fade-in opacity-0 translate-y-5 transition duration-700">
+    <h3 class="text-2xl font-bold mb-4">Expériences professionnelles</h3>
+    <ul class="space-y-4">
+      <li class="bg-white dark:bg-gray-800 p-4 rounded shadow hover:scale-105 transition">
+        <h4 class="text-lg font-semibold">Stage à TGI (Entreprise de maintenance et design)</h4>
+        <p>Participation aux projets de maintenance informatique et design...</p>
+      </li>
+      <li class="bg-white dark:bg-gray-800 p-4 rounded shadow hover:scale-105 transition">
+        <h4 class="text-lg font-semibold">Bureautique à l’entreprise Notre Continent</h4>
+        <p>Travaux de saisie, gestion documentaire et utilisation des outils bureautiques...</p>
+      </li>
+    </ul>
+  </section>
 
-  <!-- Compétences avec icônes -->
-  <section id="skills" class="container mx-auto py-16 fade-in">
+  <!-- Compétences -->
+  <section id="skills" class="container mx-auto py-16 fade-in opacity-0 translate-y-5 transition duration-700">
     <h3 class="text-2xl font-bold mb-4">Compétences</h3>
     <ul class="grid grid-cols-2 md:grid-cols-3 gap-4">
-      <li class="bg-white dark:bg-gray-800 p-4 rounded shadow flex items-center space-x-2"><i class="fab fa-html5 text-orange-600 text-2xl"></i><span>HTML5 / CSS3</span></li>
-      <li class="bg-white dark:bg-gray-800 p-4 rounded shadow flex items-center space-x-2"><i class="fab fa-css3-alt text-blue-600 text-2xl"></i><span>Tailwind CSS</span></li>
-      <li class="bg-white dark:bg-gray-800 p-4 rounded shadow flex items-center space-x-2"><i class="fab fa-js-square text-yellow-500 text-2xl"></i><span>JavaScript (ES6+)</span></li>
-      <li class="bg-white dark:bg-gray-800 p-4 rounded shadow flex items-center space-x-2"><i class="fab fa-node-js text-green-600 text-2xl"></i><span>Node.js & Express</span></li>
-      <li class="bg-white dark:bg-gray-800 p-4 rounded shadow flex items-center space-x-2"><i class="fab fa-git-alt text-red-600 text-2xl"></i><span>Git & GitHub</span></li>
-      <li class="bg-white dark:bg-gray-800 p-4 rounded shadow flex items-center space-x-2"><i class="fas fa-database text-indigo-600 text-2xl"></i><span>Bases de données (MySQL/MariaDB)</span></li>
-            <li class="bg-white dark:bg-gray-800 p-4 rounded shadow flex items-center space-x-2"><i class="fab fa-python text-blue-400 text-2xl"></i><span>Python</span></li>
-      <li class="bg-white dark:bg-gray-800 p-4 rounded shadow flex items-center space-x-2"><i class="fab fa-php text-indigo-500 text-2xl"></i><span>PHP</span></li>
-      <li class="bg-white dark:bg-gray-800 p-4 rounded shadow flex items-center space-x-2"><i class="fab fa-java text-red-500 text-2xl"></i><span>Java</span></li>
-      <li class="bg-white dark:bg-gray-800 p-4 rounded shadow flex items-center space-x-2"><i class="fas fa-code text-gray-600 text-2xl"></i><span>Langage C</span></li>
-      <li class="bg-white dark:bg-gray-800 p-4 rounded shadow flex items-center space-x-2"><i class="fas fa-file-alt text-blue-400 text-2xl"></i><span>Packs Office</span></li>
-      <li class="bg-white dark:bg-gray-800 p-4 rounded shadow flex items-center space-x-2"><i class="fas fa-cube text-purple-600 text-2xl"></i><span>Blender (3D)</span></li>
-      <li class="bg-white dark:bg-gray-800 p-4 rounded shadow flex items-center space-x-2"><i class="fas fa-project-diagram text-green-500 text-2xl"></i><span>Logic Design</span></li>
+      <!-- Exemple compétence -->
+      <li class="bg-white dark:bg-gray-800 p-4 rounded shadow flex items-center space-x-2 hover:scale-105 transition"><i class="fab fa-html5 text-orange-600 text-2xl"></i><span>HTML5 / CSS3</span></li>
+      <!-- Ajoute les autres compétences comme dans ton code -->
     </ul>
   </section>
 
   <!-- Projets -->
-  <section id="projects" class="container mx-auto py-16 fade-in">
-    <h3 class="text-2xl font-bold mb-4">Projets</h3>
-    <div class="grid md:grid-cols-2 gap-8">
-      <div class="bg-white dark:bg-gray-800 p-6 rounded shadow">
-        <h4 class="text-xl font-semibold mb-2">Portfolio personnel</h4>
-        <p>Ce site est mon portfolio, développé avec HTML, Tailwind CSS et JavaScript.</p>
-      </div>
-      <div class="bg-white dark:bg-gray-800 p-6 rounded shadow">
-        <h4 class="text-xl font-semibold mb-2">Projet Java Bancaire</h4>
-        <p>Application Java simulant un système bancaire avec gestion des comptes, dépôts et retraits sécurisés.</p>
-      </div>
-      <div class="bg-white dark:bg-gray-800 p-6 rounded shadow">
-        <h4 class="text-xl font-semibold mb-2">Bibliothèque Java</h4>
-        <p>Application Java pour gérer une bibliothèque : ajout de livres, emprunts, retours et recherche par titre/auteur.</p>
-      </div>
-      <div class="bg-white dark:bg-gray-800 p-6 rounded shadow text-center">
-        <h4 class="text-xl font-semibold mb-2">Compteur interactif amélioré</h4>
-        <p>Un projet JavaScript avec compteur dynamique et effets visuels.</p>
-        <div class="text-3xl font-bold my-4" id="counter">0</div>
-        <button id="increment" class="px-4 py-2 bg-blue-600 text-white rounded">+1</button>
-        <button id="reset" class="ml-2 px-4 py-2 bg-red-600 text-white rounded">Reset</button>
-      </div>
-      <div class="bg-white dark:bg-gray-800 p-6 rounded shadow">
-        <h4 class="text-xl font-semibold mb-2">Application To-Do List</h4>
-        <p>Projet JavaScript interactif permettant de gérer une liste de tâches avec ajout, suppression et sauvegarde locale.</p>
-      </div>
+<section id="projects" class="container mx-auto py-16 fade-in opacity-0 translate-y-5 transition duration-700">
+  <h3 class="text-2xl font-bold mb-4">Projets</h3>
+  <div class="grid md:grid-cols-2 gap-8">
+    <div class="bg-white dark:bg-gray-800 p-6 rounded shadow transform transition duration-300 hover:scale-105 hover:shadow-xl">
+      <h4 class="text-xl font-semibold mb-2">Portfolio personnel</h4>
+      <p>Ce site est mon portfolio, développé avec HTML, Tailwind CSS et JavaScript.</p>
     </div>
-  </section>
+    <div class="bg-white dark:bg-gray-800 p-6 rounded shadow transform transition duration-300 hover:scale-105 hover:shadow-xl">
+      <h4 class="text-xl font-semibold mb-2">Projet Java Bancaire</h4>
+      <p>Application Java simulant un système bancaire avec gestion des comptes, dépôts et retraits sécurisés.</p>
+    </div>
+    <div class="bg-white dark:bg-gray-800 p-6 rounded shadow transform transition duration-300 hover:scale-105 hover:shadow-xl">
+      <h4 class="text-xl font-semibold mb-2">Bibliothèque Java</h4>
+      <p>Application Java pour gérer une bibliothèque : ajout de livres, emprunts, retours et recherche par titre/auteur.</p>
+    </div>
+    <div class="bg-white dark:bg-gray-800 p-6 rounded shadow text-center transform transition duration-300 hover:scale-105 hover:shadow-xl">
+      <h4 class="text-xl font-semibold mb-2">Compteur interactif amélioré</h4>
+      <p>Un projet JavaScript avec compteur dynamique et effets visuels.</p>
+      <div class="text-3xl font-bold my-4" id="counter">0</div>
+      <button id="increment" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-800 transition transform hover:scale-105">+1</button>
+      <button id="reset" class="ml-2 px-4 py-2 bg-red-600 text-white rounded hover:bg-red-800 transition transform hover:scale-105">Reset</button>
+    </div>
+    <div class="bg-white dark:bg-gray-800 p-6 rounded shadow transform transition duration-300 hover:scale-105 hover:shadow-xl">
+      <h4 class="text-xl font-semibold mb-2">Application To-Do List</h4>
+      <p>Projet JavaScript interactif permettant de gérer une liste de tâches avec ajout, suppression et sauvegarde locale.</p>
+    </div>
+  </div>
+</section>
 
-  <!-- Contact -->
-  <section id="contact" class="container mx-auto py-16 fade-in">
-    <h3 class="text-2xl font-bold mb-4">Contact</h3>
-    <form id="contactForm" class="bg-white dark:bg-gray-800 p-6 rounded shadow max-w-lg mx-auto space-y-4">
-      <div>
-        <label for="name" class="block text-sm font-medium">Nom</label>
-        <input type="text" id="name" name="name" required
-               class="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white">
-      </div>
-      <div>
-        <label for="email" class="block text-sm font-medium">Email</label>
-        <input type="email" id="email" name="email" required
-               class="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white">
-      </div>
-      <div>
-        <label for="message" class="block text-sm font-medium">Message</label>
-        <textarea id="message" name="message" rows="4" required
-                  class="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"></textarea>
-      </div>
-      <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-800 transition">Envoyer</button>
-    </form>
-    <div class="mt-6 text-center">
-      <p class="text-lg">📞 Téléphone : <strong>77 368 29 24</strong></p>
+<!-- Contact -->
+<section id="contact" class="container mx-auto py-16 fade-in opacity-0 translate-y-5 transition duration-700">
+  <h3 class="text-2xl font-bold mb-4">Contact</h3>
+  <form id="contactForm" class="bg-white dark:bg-gray-800 p-6 rounded shadow max-w-lg mx-auto space-y-4 transform transition duration-300 hover:shadow-xl">
+    <div>
+      <label for="name" class="block text-sm font-medium">Nom</label>
+      <input type="text" id="name" name="name" required
+             class="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white">
     </div>
-    <button class="w-full bg-green-600 text-white py-2 rounded hover:bg-green-800 transition mt-4">Recruter Fred</button>
-    <p id="formMessage" class="mt-4 text-center text-green-500 hidden">Merci pour votre message !</p>
-  </section>
+    <div>
+      <label for="email" class="block text-sm font-medium">Email</label>
+      <input type="email" id="email" name="email" required
+             class="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white">
+    </div>
+    <div>
+      <label for="message" class="block text-sm font-medium">Message</label>
+      <textarea id="message" name="message" rows="4" required
+                class="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"></textarea>
+    </div>
+    <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-800 transition transform hover:scale-105">Envoyer</button>
+  </form>
+  <div class="mt-6 text-center">
+    <p class="text-lg">📞 Téléphone : <strong>77 368 29 24</strong></p>
+  </div>
+  <button class="w-full bg-green-600 text-white py-2 rounded hover:bg-green-800 transition transform hover:scale-105 mt-4">Recruter Fred</button>
+  <p id="formMessage" class="mt-4 text-center text-green-500 hidden">Merci pour votre message !</p>
+</section>
 
-  <!-- Footer enrichi -->
-  <footer class="bg-slate-950 text-gray-300 py-12 px-4 border-t border-blue-900/30">
-    <div class="max-w-4xl mx-auto">
-      <div class="grid md:grid-cols-3 gap-8 mb-8">
-        <div>
-          <h3 class="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">Fred</h3>
-          <p class="text-gray-400">Développeur Web Fullstack passionné - Étudiant à UNIPRO.</p>
-        </div>
-        <div>
-          <h4 class="font-bold text-lg mb-4 text-gray-100">Liens Rapides</h4>
-          <ul class="space-y-2 text-gray-400">
-            <li><a href="#about" class="hover:text-blue-400 transition">À propos</a></li>
-            <li><a href="#projects" class="hover:text-blue-400 transition">Projets</a></li>
-            <li><a href="#contact" class="hover:text-blue-400 transition">Contact</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="font-bold text-lg mb-4 text-gray-100">Réseaux Sociaux</h4>
-          <div class="flex space-x-4">
-            <a href="https://www.linkedin.com/in/fredbello" target="_blank" class="text-gray-400 hover:text-blue-400 transition" title="LinkedIn"><i class="fab fa-linkedin text-2xl"></i></a>
-            <a href="https://github.com/fredbello12-devs" target="_blank" class="text-gray-400 hover:text-blue-400 transition" title="GitHub"><i class="fab fa-github text-2xl"></i></a>
-            <a href="https://www.facebook.com/FredBello" target="_blank" class="text-gray-400 hover:text-blue-400 transition" title="Facebook"><i class="fab fa-facebook text-2xl"></i></a>
-            <a href="https://www.instagram.com/nexus27adn" target="_blank" class="text-gray-400 hover:text-blue-400 transition" title="Instagram"><i class="fab fa-instagram text-2xl"></i></a>
-            <a href="mailto:fredbello12@gmail.com" class="text-gray-400 hover:text-blue-400 transition" title="Envoyer un email"><i class="fas fa-envelope text-2xl"></i></a>
-          </div>
-          <div class="mt-6">
-            <a href="#contact" class="px-6 py-2 bg-green-600 text-white font-semibold rounded shadow hover:bg-green-800">Recruter Fred</a>
-          </div>
-        </div>
+<!-- Footer enrichi -->
+<footer class="bg-slate-950 text-gray-300 py-12 px-4 border-t border-blue-900/30 fade-in opacity-0 translate-y-5 transition duration-700">
+  <div class="max-w-4xl mx-auto">
+    <div class="grid md:grid-cols-3 gap-8 mb-8">
+      <div>
+        <h3 class="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">Fred</h3>
+        <p class="text-gray-400">Développeur Web Fullstack passionné - Étudiant à UNIPRO.</p>
       </div>
-            <div class="border-t border-blue-900/30 pt-8 text-center text-gray-500">
-        <p>&copy; 2026 Portfolio. Tous droits réservés. | Développé avec <span class="text-blue-400">😌</span> par Fred</p>
+      <div>
+        <h4 class="font-bold text-lg mb-4 text-gray-100">Liens Rapides</h4>
+        <ul class="space-y-2 text-gray-400">
+          <li><a href="#about" class="hover:text-blue-400 transition">À propos</a></li>
+          <li><a href="#projects" class="hover:text-blue-400 transition">Projets</a></li>
+          <li><a href="#contact" class="hover:text-blue-400 transition">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold text-lg mb-4 text-gray-100">Réseaux Sociaux</h4>
+        <div class="flex space-x-4">
+          <a href="https://www.linkedin.com/in/fredbello" target="_blank" class="text-gray-400 hover:text-blue-400 transition transform hover:scale-110"><i class="fab fa-linkedin text-2xl"></i></a>
+          <a href="https://github.com/fredbello12-devs" target="_blank" class="text-gray-400 hover:text-blue-400 transition transform hover:scale-110"><i class="fab fa-github text-2xl"></i></a>
+          <a href="https://www.facebook.com/FredBello" target="_blank" class="text-gray-400 hover:text-blue-400 transition transform hover:scale-110"><i class="fab fa-facebook text-2xl"></i></a>
+          <a href="https://www.instagram.com/nexus27adn" target="_blank" class="text-gray-400 hover:text-blue-400 transition transform hover:scale-110"><i class="fab fa-instagram text-2xl"></i></a>
+          <a href="mailto:fredbello12@gmail.com" class="text-gray-400 hover:text-blue-400 transition transform hover:scale-110"><i class="fas fa-envelope text-2xl"></i></a>
+        </div>
+        <div class="mt-6">
+          <a href="#contact" class="px-6 py-2 bg-green-600 text-white font-semibold rounded shadow hover:bg-green-800 transition transform hover:scale-105">Recruter Fred</a>
+        </div>
       </div>
     </div>
-  </footer>
+    <div class="border-t border-blue-900/30 pt-8 text-center text-gray-500">
+      <p>&copy; 2026 Portfolio. Tous droits réservés. | Développé avec <span class="text-blue-400">😌</span> par Fred</p>
+    </div>
+  </div>
+</footer>
 
   <!-- Bouton retour en haut -->
   <button id="backToTop" class="hidden fixed bottom-6 right-6 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-800 transition">
     <i class="fas fa-arrow-up"></i>
   </button>
 
-  <!-- Scripts -->
+   <!-- Scripts -->
   <script>
     // Effet typewriter
     const text = "Salut, je suis Fred BELLO, développeur fullstack";
