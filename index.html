@@ -235,8 +235,8 @@
    <!-- Scripts -->
   <script>
     // Effet typewriter
-    
-  const phrases = [
+
+     const phrases = [
     "Salut, je suis Fred BELLO, développeur fullstack",
     "Passionné par l’automatisation",
     "Créatif en 2D/3D",
@@ -247,7 +247,7 @@
   let j = 0; // index de la phrase
   let currentPhrase = [];
   let isDeleting = false;
-  let stopAtFirst = false; // contrôle pour s'arrêter à la première phrase
+  let loopCount = 0; // compteur de boucles
 
   function typeWriter() {
     const heroTitle = document.getElementById("hero-title");
@@ -268,11 +268,6 @@
 
     // Passage à la phrase suivante
     if (i === phrases[j].length && !isDeleting) {
-      if (j === 0) {
-        // ✅ Si c'est la première phrase, on s'arrête ici
-        stopAtFirst = true;
-        return;
-      }
       isDeleting = true;
       setTimeout(typeWriter, 1500); // pause avant effacement
       return;
@@ -280,13 +275,19 @@
 
     if (isDeleting && i === 0) {
       isDeleting = false;
-      j = (j + 1) % phrases.length; // boucle sur les phrases
+      j = (j + 1) % phrases.length;
+
+      // Quand on revient à la première phrase, on incrémente le compteur
+      if (j === 0) {
+        loopCount++;
+        // ✅ Après un cycle complet, on s'arrête sur la première phrase
+        heroTitle.innerHTML = phrases[0];
+        return;
+      }
     }
 
-    if (!stopAtFirst) {
-      const speed = isDeleting ? 50 : 100; // vitesse différente écriture/effacement
-      setTimeout(typeWriter, speed);
-    }
+    const speed = isDeleting ? 50 : 100;
+    setTimeout(typeWriter, speed);
   }
 
   window.onload = typeWriter;
