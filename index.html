@@ -62,7 +62,8 @@
  <!-- Hero --> 
   <section id="hero" class="h-screen flex flex-col justify-center items-center text-center bg-fixed bg-cover bg-center text-white" style="background-image: url('images/hero-bg.jpg');"> 
   <img src="profil.jpeg" alt="Photo de Fred Bello" class="w-32 h-32 rounded-full border-4 border-white shadow-lg mb-6"> 
-  <h2 id="hero-title" class="text-4xl font-bold mb-4 text-gray-900 dark:text-white"></h2> <p class="text-lg">Développeur passionné par l’automatisation, le front-end et le back-end</p> 
+  <h2 id="hero-title" class="text-4xl font-bold mb-4 text-gray-900 dark:text-white"></h2> 
+  <p class="text-lg text-gray-900 dark:text-gray-100">Développeur passionné par l’automatisation, le front-end et le back-end</p> 
   <div class="flex justify-center mt-6"> <a href="#projects" class="px-6 py-2 bg-white text-blue-600 font-semibold rounded shadow hover:bg-gray-200 hover:scale-105 transition">Voir mes projets</a> 
     <a href="#contact" class="ml-4 px-6 py-2 bg-green-600 text-white font-semibold rounded shadow hover:bg-green-800 hover:scale-105 transition">Recruter</a> 
   </div> 
@@ -246,6 +247,7 @@
   let j = 0; // index de la phrase
   let currentPhrase = [];
   let isDeleting = false;
+  let stopAtFirst = false; // contrôle pour s'arrêter à la première phrase
 
   function typeWriter() {
     const heroTitle = document.getElementById("hero-title");
@@ -266,6 +268,11 @@
 
     // Passage à la phrase suivante
     if (i === phrases[j].length && !isDeleting) {
+      if (j === 0) {
+        // ✅ Si c'est la première phrase, on s'arrête ici
+        stopAtFirst = true;
+        return;
+      }
       isDeleting = true;
       setTimeout(typeWriter, 1500); // pause avant effacement
       return;
@@ -276,8 +283,10 @@
       j = (j + 1) % phrases.length; // boucle sur les phrases
     }
 
-    const speed = isDeleting ? 50 : 100; // vitesse différente écriture/effacement
-    setTimeout(typeWriter, speed);
+    if (!stopAtFirst) {
+      const speed = isDeleting ? 50 : 100; // vitesse différente écriture/effacement
+      setTimeout(typeWriter, speed);
+    }
   }
 
   window.onload = typeWriter;
